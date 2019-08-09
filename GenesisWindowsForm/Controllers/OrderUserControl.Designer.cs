@@ -49,7 +49,7 @@
 			this.gOrders.Name = "gOrders";
 			this.gOrders.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemButtonEdit1});
-			this.gOrders.Size = new System.Drawing.Size(605, 388);
+			this.gOrders.Size = new System.Drawing.Size(773, 511);
 			this.gOrders.TabIndex = 0;
 			this.gOrders.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvOrders});
@@ -139,7 +139,7 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.Controls.Add(this.gOrders);
 			this.Name = "OrderUserControl";
-			this.Size = new System.Drawing.Size(605, 388);
+			this.Size = new System.Drawing.Size(773, 511);
 			this.Load += new System.EventHandler(this.OrderUserControl_Load);
 			((System.ComponentModel.ISupportInitialize)(this.gOrders)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.gvOrders)).EndInit();

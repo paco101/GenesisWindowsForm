@@ -31,6 +31,11 @@ namespace Genesis
 			InitializeComponent();
 		}
 
+		private void frmMain_Load(object sender, EventArgs e)
+		{
+			ShowController(HomeUserControl.Instance);
+		}
+
 		private void ctrlCustomers_Click(object sender, EventArgs e)
 		{
 			ShowController(CustomerUserControl.Instance);
@@ -51,6 +56,5 @@ namespace Genesis
 			control.BringToFront();
 			control.Show();
 		}
-
 	}
 }

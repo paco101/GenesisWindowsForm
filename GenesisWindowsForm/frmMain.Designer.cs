@@ -33,10 +33,10 @@
 			this.container = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormContainer();
 			this.accordionControl1 = new DevExpress.XtraBars.Navigation.AccordionControl();
 			this.accordionControlElement1 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-			this.ctrlCustomers = new DevExpress.XtraBars.Navigation.AccordionControlElement();
 			this.accordionControlSeparator1 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
 			this.ctrlOrders = new DevExpress.XtraBars.Navigation.AccordionControlElement();
 			this.accordionControlSeparator2 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
+			this.ctrlCustomers = new DevExpress.XtraBars.Navigation.AccordionControlElement();
 			this.fluentDesignFormControl1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
 			this.skinDropDownButtonItem1 = new DevExpress.XtraBars.SkinDropDownButtonItem();
 			((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
@@ -73,7 +73,9 @@
 			this.accordionControl1.Dock = System.Windows.Forms.DockStyle.Left;
 			this.accordionControl1.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.accordionControlElement1,
-            this.accordionControlSeparator2});
+            this.ctrlOrders,
+            this.accordionControlSeparator2,
+            this.ctrlCustomers});
 			this.accordionControl1.Location = new System.Drawing.Point(0, 31);
 			this.accordionControl1.Name = "accordionControl1";
 			this.accordionControl1.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Touch;
@@ -84,25 +86,10 @@
 			// accordionControlElement1
 			// 
 			this.accordionControlElement1.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
-            this.ctrlCustomers,
-            this.accordionControlSeparator1,
-            this.ctrlOrders});
+            this.accordionControlSeparator1});
 			this.accordionControlElement1.Expanded = true;
 			this.accordionControlElement1.Name = "accordionControlElement1";
 			this.accordionControlElement1.Text = "Main";
-			// 
-			// ctrlCustomers
-			// 
-			this.ctrlCustomers.HeaderTemplate.AddRange(new DevExpress.XtraBars.Navigation.HeaderElementInfo[] {
-            new DevExpress.XtraBars.Navigation.HeaderElementInfo(DevExpress.XtraBars.Navigation.HeaderElementType.Image),
-            new DevExpress.XtraBars.Navigation.HeaderElementInfo(DevExpress.XtraBars.Navigation.HeaderElementType.Text),
-            new DevExpress.XtraBars.Navigation.HeaderElementInfo(DevExpress.XtraBars.Navigation.HeaderElementType.HeaderControl, DevExpress.XtraBars.Navigation.HeaderElementAlignment.Left),
-            new DevExpress.XtraBars.Navigation.HeaderElementInfo(DevExpress.XtraBars.Navigation.HeaderElementType.ContextButtons)});
-			this.ctrlCustomers.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ctrlCustomers.ImageOptions.Image")));
-			this.ctrlCustomers.Name = "ctrlCustomers";
-			this.ctrlCustomers.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-			this.ctrlCustomers.Text = "Customers";
-			this.ctrlCustomers.Click += new System.EventHandler(this.ctrlCustomers_Click);
 			// 
 			// accordionControlSeparator1
 			// 
@@ -119,6 +106,20 @@
 			// accordionControlSeparator2
 			// 
 			this.accordionControlSeparator2.Name = "accordionControlSeparator2";
+			// 
+			// ctrlCustomers
+			// 
+			this.ctrlCustomers.Enabled = false;
+			this.ctrlCustomers.HeaderTemplate.AddRange(new DevExpress.XtraBars.Navigation.HeaderElementInfo[] {
+            new DevExpress.XtraBars.Navigation.HeaderElementInfo(DevExpress.XtraBars.Navigation.HeaderElementType.Image),
+            new DevExpress.XtraBars.Navigation.HeaderElementInfo(DevExpress.XtraBars.Navigation.HeaderElementType.Text),
+            new DevExpress.XtraBars.Navigation.HeaderElementInfo(DevExpress.XtraBars.Navigation.HeaderElementType.HeaderControl, DevExpress.XtraBars.Navigation.HeaderElementAlignment.Left),
+            new DevExpress.XtraBars.Navigation.HeaderElementInfo(DevExpress.XtraBars.Navigation.HeaderElementType.ContextButtons)});
+			this.ctrlCustomers.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ctrlCustomers.ImageOptions.Image")));
+			this.ctrlCustomers.Name = "ctrlCustomers";
+			this.ctrlCustomers.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+			this.ctrlCustomers.Text = "Customers";
+			this.ctrlCustomers.Click += new System.EventHandler(this.ctrlCustomers_Click);
 			// 
 			// fluentDesignFormControl1
 			// 
@@ -151,6 +152,7 @@
 			this.NavigationControl = this.accordionControl1;
 			this.Text = "Genesis Automation - Demo";
 			this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+			this.Load += new System.EventHandler(this.frmMain_Load);
 			((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).EndInit();
 			this.ResumeLayout(false);

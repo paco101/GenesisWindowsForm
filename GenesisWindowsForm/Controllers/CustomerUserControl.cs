@@ -11,6 +11,7 @@ using DevExpress.XtraEditors;
 using Genesis.Models;
 using DevExpress.XtraSplashScreen;
 using System.Data.Entity;
+using System.ComponentModel.DataAnnotations;
 
 namespace Genesis.Controllers
 {
@@ -38,12 +39,6 @@ namespace Genesis.Controllers
 		}
 
 
-
-		private void CustomerUserControl_Load(object sender, EventArgs e)
-		{
-			//LoadCustomer();
-		}
-
 		public void LoadCustomerScreen(string customerId = "")
 		{
 			//Open Wait Form
@@ -63,6 +58,7 @@ namespace Genesis.Controllers
 
 		public Customer LoadCustomerData(string customerId = "")
 		{
+			// This method is used in the UnitTest
 			_customer = new Customer();
 			if (!string.IsNullOrEmpty(customerId))
 				_customer = context.Customers.Where(c => c.Id.ToString() == customerId).FirstOrDefault();
@@ -91,6 +87,18 @@ namespace Genesis.Controllers
 
 		public async Task<bool> SaveCustomerData(Customer cust)
 		{
+			// This method is used in the UnitTest
+
+			//Validation Context
+			ValidationContext contextValidation = new ValidationContext(cust, null, null);
+			IList<ValidationResult> errors = new List<ValidationResult>();
+
+			if (!Validator.TryValidateObject(cust, contextValidation, errors, true))
+			{
+				foreach (ValidationResult result in errors)
+					MessageBox.Show(result.ErrorMessage);
+			}
+			// Find if a customer with the same name exists
 			var checkIfNameExists = await context.Customers.Where(c => c.FirstName == cust.FirstName && c.LastName == cust.LastName && c.Id != _customer.Id).SingleOrDefaultAsync();
 			if (checkIfNameExists == null)
 			{

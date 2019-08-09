@@ -63,6 +63,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\HomeUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controllers\HomeUserControl.Designer.cs">
+      <DependentUpon>HomeUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\CustomerUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -103,6 +109,9 @@
     <Compile Include="WaitingForm.Designer.cs">
       <DependentUpon>WaitingForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Controllers\HomeUserControl.resx">
+      <DependentUpon>HomeUserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controllers\CustomerUserControl.resx">
       <DependentUpon>CustomerUserControl.cs</DependentUpon>
     </EmbeddedResource>

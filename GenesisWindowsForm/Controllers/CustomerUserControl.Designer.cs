@@ -185,7 +185,6 @@
 			this.Controls.Add(this.layoutControl1);
 			this.Name = "CustomerUserControl";
 			this.Size = new System.Drawing.Size(589, 477);
-			this.Load += new System.EventHandler(this.CustomerUserControl_Load);
 			((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
 			this.layoutControl1.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.textLastName.Properties)).EndInit();
